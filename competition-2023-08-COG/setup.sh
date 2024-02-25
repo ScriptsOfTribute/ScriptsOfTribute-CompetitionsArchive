@@ -1,7 +1,7 @@
 # Basics
 export DEBIAN_FRONTEND=noninteractive
-apt update
-apt install -y rsync sudo wget
+apt-get update
+apt-get install -y rsync sudo wget curl git jq unzip
 
 # .Net Core
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
