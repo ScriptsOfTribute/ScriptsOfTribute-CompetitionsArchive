@@ -1,0 +1,15 @@
+nohup: ignoring input
+starting up on localhost port 12345
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Logging to Logs\PPO_V6/PPO_0
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 107      |
+|    ep_rew_mean     | 1.65     |
+| time/              |          |
+|    fps             | 1        |
+|    iterations      | 1        |
+|    time_elapsed    | 1407     |
+|    total_timesteps | 8337408  |
+---------------------------------
