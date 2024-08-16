@@ -7,7 +7,11 @@ The Scripts of Tribute version was [1.1](https://github.com/ScriptsOfTribute/Scr
 
 ### Results
 
+
+![Winners](./winners.png)
+
 The results of the competition were officially presented during the conference: [presentation slides](./slides.pdf).
+
 
 The winnng agent, developed by Adam Ciężkowski Artur Krzyżyński is described in their [engineer's thesis](https://jakubkowalski.tech/Supervising/Ciezkowski2023DevelopingCard.pdf).
 
