@@ -1,0 +1,1 @@
+global using EBW = Bots.EBW_F;
