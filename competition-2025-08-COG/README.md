@@ -1,6 +1,6 @@
 # Tales of Tribute AI Competition at IEEE Conference on Games 2025
 
-Tales of Tribute AI Competition has been one of the events at [IEEE COG 2025](https://2025.ieee-cog.org/competitions).
+Tales of Tribute AI Competition has been one of the events at [IEEE COG 2025](https://cog2025.inesc-id.pt/competitions/).
 
 The Scripts of Tribute version was [1.1.1](https://github.com/ScriptsOfTribute/ScriptsOfTribute-GUI/releases/tag/v1.1.1) featuring 6 patron decks (Pelin, Crows, Ansei, Rajhin, Orgnum, and Alessia.) and  compatible with Tales of Tribute from ESO PC/Mac Patch 10.3.5 (10.03.2025).
 
