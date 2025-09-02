@@ -26,22 +26,23 @@ The results of the competition were [officially presented](./slides.pdf)  during
 
 ### Reproducibility
 
-Here is the code allowing to rerun the competition.
-
-All participating agents are available in the repository.
-
-```sh
-# Stock Ubuntu 24.04
-source setup.sh
-source prepare.sh
-source run.sh | tee out-1.txt & # One per server.
-source run.sh | tee out-2.txt & # One per server.
-source run.sh | tee out-3.txt & # One per server.
-source run.sh | tee out-4.txt & # One per server.
-wait
-source graph.sh
+To rerun the competition unpack the tar file
+```bash
+tar -xvf TournamentRunnerEnv.tar.xz
 ```
 
+Inside the unpacked directory there are docker files necessery to start docker container with configured service.
+First check `config.yaml` file to set configurations for the tournament and bots. Then run
+```bash
+docker compose up --build
+```
+Then the tournament will start.
+After the tournament ends, generate the summary with:
+```bash
+docker compose run --rm tour bash -lc "pip install --no-cache-dir -r requirements.txt && python summarize_tournament.py"
+```
+You can run it during the tournament as well to get wr per round plot formed of the round already finished, it will be in results/plots.
+The summary file will be stored in results/.
 
 ## Archival Call for Participants
 
