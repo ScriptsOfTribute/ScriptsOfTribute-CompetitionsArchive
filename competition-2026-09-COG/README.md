@@ -11,7 +11,18 @@ The results of the competition were officially presented during the conference: 
 ### Results
 
 
+![Winners](./winners.png)
 
+![Winners](./ranking.png)
+
+
+![Results chart](wr_per_round.png)
+
+![Results pairs](h2h_matrix.png)
+
+### Reproducibility
+
+--
 
 ## Archival Call for Participants
 
