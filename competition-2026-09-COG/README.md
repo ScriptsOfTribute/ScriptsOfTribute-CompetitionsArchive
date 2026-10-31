@@ -29,18 +29,10 @@ tar -xJf TournamentRunnerEnv.tar.xz
 cd TournamentRunner-main
 ```
 
-The archive contains the tournament scripts, bot sources, Q tables, Docker files,
-and the Linux x86-64 GameRunner used for the competition. Model weights are not
-included. To run all eight bots, obtain the original weights separately and place
-them at these paths inside the unpacked directory:
-
-- `cs_agents/DeepSetsBotSubmission/DeepSetsValueNetwork.onnx`
-- `cs_agents/patron-zero/model/model.pt`
-- `py_agents/Nangert_submission_v6/policy_weights.pt`
-
-Without these files, the full tournament cannot be reproduced. In particular,
-the DeepSets bots can fall back to a different evaluator when their model is
-missing, so a run without the model does not reproduce their competition behavior.
+The archive contains the tournament scripts, bot sources, model weights, Q tables,
+Docker files, and the Linux x86-64 GameRunner used for the competition. All three
+model files are included at the paths expected by the bots; no separate model
+download is needed.
 
 Install Docker with Docker Compose v2. The container targets `linux/amd64`;
 other architectures need emulation. The Compose configuration allocates 8 CPUs
