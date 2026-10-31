@@ -1,0 +1,2 @@
+torch>=2.1
+scripts-of-tribute>=1.1.0

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <ScriptsOfTributeCore Condition="'$(ScriptsOfTributeCore)' == ''">..\..\external\ScriptsOfTribute-Core</ScriptsOfTributeCore>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="TorchSharp-cpu" Version="0.107.0" />
+    <ProjectReference Include="$(ScriptsOfTributeCore)\Engine\TalesOfTribute.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="model\model.pt" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="model\model.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
