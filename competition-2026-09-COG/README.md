@@ -22,7 +22,62 @@ The results of the competition were officially presented during the conference: 
 
 ### Reproducibility
 
---
+Download [TournamentRunnerEnv.tar.xz](./TournamentRunnerEnv.tar.xz), then unpack it:
+
+```bash
+tar -xJf TournamentRunnerEnv.tar.xz
+cd TournamentRunner-main
+```
+
+The archive contains the tournament scripts, bot sources, Q tables, Docker files,
+and the Linux x86-64 GameRunner used for the competition. Model weights are not
+included. To run all eight bots, obtain the original weights separately and place
+them at these paths inside the unpacked directory:
+
+- `cs_agents/DeepSetsBotSubmission/DeepSetsValueNetwork.onnx`
+- `cs_agents/patron-zero/model/model.pt`
+- `py_agents/Nangert_submission_v6/policy_weights.pt`
+
+Without these files, the full tournament cannot be reproduced. In particular,
+the DeepSets bots can fall back to a different evaluator when their model is
+missing, so a run without the model does not reproduce their competition behavior.
+
+Install Docker with Docker Compose v2. The container targets `linux/amd64`;
+other architectures need emulation. The Compose configuration allocates 8 CPUs
+and up to 24 GB of RAM. The first build needs network access to download images
+and dependencies; matches run with networking disabled.
+
+Review `config.yaml` before starting. The archived final configuration uses
+39 rounds, 20 games per pair per round, eight bots, and the six competition
+patrons. This schedules 21,840 games in total. Keep the patron list unchanged
+when rerunning the competition.
+
+Create writable result directories, then build and start the tournament:
+
+```bash
+mkdir -p results results-pilot
+chmod 0777 results results-pilot
+docker compose up --build
+```
+
+The archive contains no previous results. A restarted run resumes completed
+matches from `results/`. Use an empty results directory when changing the bot
+list, patron list, or match settings.
+
+After the tournament ends, generate the summary:
+
+```bash
+docker compose run --rm --no-deps tour python summarize_tournament.py
+```
+
+Rankings and summary files are written to `results/`; plots are written to
+`results/plots/`. Check that `results/completion_report.json` contains
+`"complete": true` before treating the ranking as final. You can also run the
+summary command during the tournament to inspect progress.
+
+This environment preserves the tournament setup. Dependency downloads and
+time-limited, parallel bot searches can affect subsequent runs, so identical
+rankings are not guaranteed.
 
 ## Archival Call for Participants
 
